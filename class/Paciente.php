@@ -8,8 +8,8 @@ class Paciente
 {
 
     private $nome;
-    private $dt_nascimento;
-    private $dt_acompanhamento;
+    private $dtNascimento;
+    private $dtAcompanhamento;
     private $cpf;
     private $id;
     private $peso;
@@ -106,46 +106,46 @@ class Paciente
     }
 
     /**
-     * Método que retorna a variável $dt_nascimento do objeto.
-     * @return string $this->dt_nascimento Variavel $dt_nascimento.
+     * Método que retorna a variável $dtNascimento do objeto.
+     * @return string $this->dtNascimento Variavel $dtNascimento.
      */
-    public function getdt_nascimento()
+    public function getdtNascimento()
     {
-        return $this->dt_nascimento;
+        return $this->dtNascimento;
     }
     /**
-     * Método que altera o valor da variavel $dt_nascimento do objeto.
-     * @param string $value  novo valor a ser agregado na variável $dt_nascimento.
+     * Método que altera o valor da variavel $dtNascimento do objeto.
+     * @param string $value  novo valor a ser agregado na variável $dtNascimento.
      */
-    public function setdt_nascimento($value)
+    public function setdtNascimento($value)
     {
-        $this->dt_nascimento = $value;
+        $this->dtNascimento = $value;
     }
-    public function showdt_nascimento()
+    public function showdtNascimento()
     {
-        $ts = strtotime($this->getdt_nascimento());
+        $ts = strtotime($this->getdtNascimento());
         return date("d/m/Y", $ts);
     }
 
     /**
-     * Método que retorna a variável $dt_acompanhamento do objeto.
-     * @return string $this->dt_acompanhamento  Variavel $dt_acompanhamento .
+     * Método que retorna a variável $dtAcompanhamento do objeto.
+     * @return string $this->dtAcompanhamento  Variavel $dtAcompanhamento .
      */
-    public function getdt_acompanhamento()
+    public function getdtAcompanhamento()
     {
-        return $this->dt_acompanhamento;
+        return $this->dtAcompanhamento;
     }
     /**
-     * Método que altera o valor da variavel $dt_acompanhamento do objeto.
-     * @param string $value  novo valor a ser agregado na variável $dt_acompanhamento.
+     * Método que altera o valor da variavel $dtAcompanhamento do objeto.
+     * @param string $value  novo valor a ser agregado na variável $dtAcompanhamento.
      */
-    public function setdt_acompanhamento($value)
+    public function setdtAcompanhamento($value)
     {
-        $this->dt_acompanhamento = $value;
+        $this->dtAcompanhamento = $value;
     }
-    public function showdt_acompanhamento()
+    public function showdtAcompanhamento()
     {
-        $ts = strtotime($this->getdt_acompanhamento());
+        $ts = strtotime($this->getdtAcompanhamento());
         return date("d/m/Y", $ts);
     }
 
@@ -248,11 +248,11 @@ class Paciente
         $this->setEmail($row['email']);
         $this->setSenha($row['senha']);
         $this->setTelefone($row['telefone']);
-        $this->setdt_nascimento($row['dataNascimento']);
+        $this->setdtNascimento($row['dataNascimento']);
         $this->setPeso($row['peso']);
         $this->setObjetivo($row['objetivo']);
         $this->setAnotacoes($row['anotacoes']);
-        $this->setdt_acompanhamento($row['inicio_acompanhamento']);
+        $this->setdtAcompanhamento($row['inicio_acompanhamento']);
     }
 
     /**
@@ -312,7 +312,7 @@ class Paciente
                 ':EMAIL' => $this->getEmail(),
                 ':SENHA' => $this->getSenha(),
                 ':TEL' => $this->getTelefone(),
-                ':DATA' => $this->getdt_nascimento(),
+                ':DATA' => $this->getdtNascimento(),
                 ':ID' => $this->getId()
             )
         );
